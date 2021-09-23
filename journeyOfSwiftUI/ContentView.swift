@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+
+let demoData: [WidgetItemData] = DataHelper.load("todayDemo.json")
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                NavigationLink(destination: TodayWidget(items: demoData)) {
+                    Text("TodatWidget")
+                }
+            }
+            .navigationTitle("journeyOfSwiftUI")
+        }
     }
 }
 
